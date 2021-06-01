@@ -24,7 +24,7 @@ class PokemonViewSet(viewsets.ModelViewSet):
             if name is not None:
                 queryset = queryset.filter(name=name)
             if kind is not None:
-                queryset = queryset.filter(kind__name=kind)
+                queryset = queryset.filter(kind=kind)
             return queryset
         except:
             return Response(status=status.HTTP_404_NOT_FOUND)
